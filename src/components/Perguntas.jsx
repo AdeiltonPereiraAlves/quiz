@@ -54,7 +54,7 @@ export default function Perguntas() {
     }
     return (
         <div className="flex flex-col gap-2 h-full items-center px-4 relative">
-             <h1>Quiz</h1>
+             <h1 className="text-xl font-extrabold">Quiz</h1>
             {/* {quiz.map((item,i)=>(
                <div key={i} >
                  <p>{item.question}</p>
@@ -84,8 +84,8 @@ export default function Perguntas() {
                     </div>
                 ))}
             </div>
-            <div className=" absolute flex items-end h-90 w-60 top-[500px] justify-center ">
-                <button onClick={handleProxima}>proxima</button>
+            <div className=" absolute flex items-end h-90 w-60 top-[500px] justify-center text-gray-400 font-bold hover:text-slate-800">
+                <button onClick={handleProxima}>proxima </button>
             </div>
         </div>
     )
