@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react"
 import programmingQuizSeed from "../data/quizDb"
 import Opcoes from "./Opcoes"
@@ -52,7 +53,8 @@ export default function Perguntas() {
         }
     }
     return (
-        <div className="flex flex-col gap-4 ">
+        <div className="flex flex-col gap-2 h-full items-center px-4 relative">
+             <h1>Quiz</h1>
             {/* {quiz.map((item,i)=>(
                <div key={i} >
                  <p>{item.question}</p>
@@ -61,20 +63,20 @@ export default function Perguntas() {
             ))} */}
             {/* <div>{acertos}</div> */}
             <Acertos acertos={acertos}/>
-            <div>
-                {msgErrou}
+            <div className="flex max-w-[250px] absolute top-16 right-38 ">
+                <span className="text-red-600">{msgErrou}</span>
+            <span className="text-green-400">{msgAcertou}</span>
             </div>
-            <dir>{msgAcertou}</dir>
-            <div className="flex w-90 h-20 justify-center mx-4 "><div className=" w-25 h-40 flex text-xl sm:text-base md:text-lg lg:text-xl xl:text-2xl break-words ">{atual}</div></div>
+            <div className="flex w-90 h-20 justify-center min-w-[200px] max-w-[250px] mt-8"><div className=" w-25 h-40 flex text-xl sm:text-base md:text-lg lg:text-xl xl:text-2xl break-words ">{atual}</div></div>
             {/* <div className="flex gap-10 "><button onClick={()=>handleOption(atualOption.shift())} value={atualOption} className={`${boleano? 'bg-green-600' : 'bg-red-500'} gap-10 `} ><div className="flex m-10">{atualOption}</div></button></div>
             <div></div>
             <div></div>
             <div></div> */}
-            <div className="flex flex-wrap gap-6 justify-center w-[800px] mx-4">
+            <div className="flex flex-col gap-2 justify-center  md:w-[700] mx-auto h-[300px] relative">
                 {quiz[count].options.map((option,i) => (
-                    <div className="flex gap-10 " key={i}>
+                    <div className="flex  text-sm min-w-[300px] " key={i}>
                 
-                        <button onClick={() => handleOption(option)} value={option} className={`${ option === res && selectedOption== true? 'bg-green-600' : 'bg-[#a6aec1]'} ${option !== res ? 'bg-[#a6aec1]' : ''} p-4 rounded text-black `} >{
+                        <button  onClick={() => handleOption(option)} value={option} className={`${ option === res && selectedOption== true? 'bg-green-600' : 'bg-[#a6aec1]'} ${option !== res ? 'bg-[#a6aec1]' : ''} p-4 rounded text-black  min-w-[300px] max-w-[300px] hover:bg-[#6c788e]`} >{
                          option }
                         {/* <button onClick={() => handleOption(option)} value={option} className={` gap-10 `} >{
                          option} */}
@@ -82,7 +84,9 @@ export default function Perguntas() {
                     </div>
                 ))}
             </div>
-            <button onClick={handleProxima}>proxima</button>
+            <div className=" absolute flex items-end h-90 w-60 top-[500px] justify-center ">
+                <button onClick={handleProxima}>proxima</button>
+            </div>
         </div>
     )
 }

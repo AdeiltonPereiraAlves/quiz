@@ -5,7 +5,7 @@ function App() {
   
 
   return (
-    <div className="flex justify-center items-center h-[100vh] py-10 bg-[#fcfdff] ">
+    <div className="flex justify-center items-center h-[100vh] py-10 bg-[#fcfdff] w-full">
      
       <Principal/>
     </div>

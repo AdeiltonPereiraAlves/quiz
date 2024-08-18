@@ -1,6 +1,6 @@
 const programmingQuizSeed = [
     {
-      question: "Qual das seguintes linguagens de programação é tipicamente usada para desenvolvimento web front-end?",
+      question: "linguagem usada no front-end?",
       options: ["Python", "Java", "JavaScript", "C++"],
       correctAnswer: "JavaScript"
     },
@@ -20,12 +20,12 @@ const programmingQuizSeed = [
       correctAnswer: "def myFunction():"
     },
     {
-      question: "Qual dos seguintes não é um banco de dados relacional?",
+      question: "É um banco de dados não relacional ",
       options: ["MySQL", "MongoDB", "PostgreSQL", "SQLite"],
       correctAnswer: "MongoDB"
     },
     {
-      question: "Em qual linguagem foi escrito o núcleo do sistema operacional Linux?",
+      question: "Em qual linguagem foi escrito o núcleo do  Linux?",
       options: ["Python", "C", "C++", "Java"],
       correctAnswer: "C"
     },
@@ -50,7 +50,7 @@ const programmingQuizSeed = [
       correctAnswer: "Adicionar estilos e layout a uma página web"
     },
     {
-      question: "Qual dos seguintes métodos é usado para adicionar um elemento ao final de um array em JavaScript?",
+      question: "Adiciona um elemento ao final de um array em JavaScript?",
       options: ["push()", "pop()", "shift()", "unshift()"],
       correctAnswer: "push()"
     },
