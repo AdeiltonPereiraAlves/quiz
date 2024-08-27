@@ -3,25 +3,28 @@ import { OptionContext } from "../context/OptionContext";
 
 export default function useOption(){
 
-    const {setBoleano,quiz,setAtual,acertos, atual,setRes,res, setAcertos, setAtualOption, atualOption,setSelectedOption, setMsgAcertou,count,setCount, setMsgErrou} = useContext(OptionContext)
+    const {setBoleano,quiz,setAtual,umClick,setUmClick,acertos, atual,setRes,res, setAcertos, setAtualOption, atualOption,setSelectedOption, setMsgAcertou,count,setCount, setMsgErrou} = useContext(OptionContext)
     function handleOption(value){
         setRes(quiz[count].correctAnswer)
-        if (value === res) {
-           
+        if (value === res && umClick === 0) {
+            
             setBoleano(true);
             setAcertos(acertos+1);
             setSelectedOption(true);
             setMsgAcertou("Correto");
+            setUmClick(1)
             
-        } else {
+        } else if(umClick===0){
+            setUmClick(1)
             setBoleano(false);
             setMsgErrou("Você Errou!!!");
           
         }
+        
     }
     function handleProxima() {
         if(count<quiz.length-1){
-            
+            setUmClick(0)
             setAtual(quiz[count+1].question)
             setAtualOption(quiz[count+1].options)
             setRes(quiz[count+1].correctAnswer)

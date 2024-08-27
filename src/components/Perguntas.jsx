@@ -15,9 +15,7 @@ export default function Perguntas(){
 
     const {acertos,msgAcertou, msgErrou, res,selectedOption, quiz, boleano, atual,atualOption,count, option} = useContext(OptionContext)
 
-    function click(){
-        handleProxima()
-    }
+    
 
     return (
         <div className="flex flex-col gap-2 h-full items-center px-4 relative">
@@ -43,7 +41,7 @@ export default function Perguntas(){
                 ))}
             </div>
             <div className=" absolute flex items-end h-90 w-60 top-[500px] justify-center text-gray-400 font-bold hover:text-slate-800">
-                <button onClick={click}>proxima </button>
+                <button onClick={handleProxima}>proxima </button>
             </div>
         </div>
     )

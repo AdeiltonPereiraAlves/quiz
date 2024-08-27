@@ -17,6 +17,7 @@ export default function OptionProvider({children}){
     const [selectedOption, setSelectedOption] = useState(null);
     const [msgErrou, setMsgErrou] = useState('')
     const [msgAcertou, setMsgAcertou] = useState('')
+    const[umClick, setUmClick] = useState(0);
      
     const[acertos, setAcertos] = useState(0)
    
@@ -28,7 +29,7 @@ export default function OptionProvider({children}){
       selectedOption, setSelectedOption,
       msgAcertou, setMsgAcertou,
       msgErrou, setMsgErrou,setAtualOption,atualOption,
-      quiz, res,atual, atualOption, count, setCount, setAtual,setRes
+      quiz, res,atual, atualOption, count, setCount, setAtual,setRes, umClick, setUmClick,
    }
    
     return(
