@@ -3,7 +3,9 @@ import { OptionContext } from "../context/OptionContext";
 
 export default function useOption(){
 
-    const {setBoleano,quiz,setAtual,umClick,setUmClick,acertos, atual,setRes,res, setAcertos, setAtualOption, atualOption,setSelectedOption, setMsgAcertou,count,setCount, setMsgErrou} = useContext(OptionContext)
+    const {setBoleano, aleatorizarArray,quiz,setAtual,setQuiz, umClick,setUmClick,acertos, atual,setRes,res, setAcertos, setAtualOption, atualOption,setSelectedOption, setMsgAcertou,count,setCount, setMsgErrou} = useContext(OptionContext)
+    
+   
     function handleOption(value){
         setRes(quiz[count].correctAnswer)
         if (value === res && umClick === 0) {
@@ -23,13 +25,16 @@ export default function useOption(){
         
     }
     function handleProxima() {
+     
         if(count<quiz.length-1){
             setUmClick(0)
-            setAtual(quiz[count+1].question)
-            setAtualOption(quiz[count+1].options)
-            setRes(quiz[count+1].correctAnswer)
+            setAtual(quiz[count].question)
+            setAtualOption(quiz[count].options)
+            setRes(quiz[count].correctAnswer)
             console.log(res)
-            setCount(count + 1);
+            aleatorizarArray()
+
+            // setCount(count + 1);
             setBoleano(null);
             setSelectedOption(null);
             setMsgErrou("")
@@ -41,6 +46,8 @@ export default function useOption(){
         }
  
      }
+
+   
 
     return{
         handleOption,
