@@ -1,66 +1,28 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react"
+import { useContext, useState } from "react"
 import programmingQuizSeed from "../data/quizDb"
 import Opcoes from "./Opcoes"
 import Acertos from "./Acertos"
+import useOpcoes from '../hooks/useOpcoes'
+import { OptionContext } from "../context/OptionContext"
 
-export default function Perguntas() {
+export default function Perguntas(){
+    const {handleOption, handleProxima} = useOpcoes() 
+ 
+    
+    
 
-    const [quiz, setQuiz] = useState(programmingQuizSeed)
-    const [res, setRes] = useState(programmingQuizSeed[0].correctAnswer)
-    const [atual, setAtual] = useState(programmingQuizSeed[0].question)
-    const [atualOption, setAtualOption] = useState(programmingQuizSeed[0].options)
-    const [boleano, setBoleano] = useState(null)
-    const [count, setCount] = useState(0)
-    const [selectedOption, setSelectedOption] = useState(null);
-    const [msgErrou, setMsgErrou] = useState('')
-    const [msgAcertou, setMsgAcertou] = useState('')
-    const[acertos, setAcertos] = useState(0)
-    function handleProxima() {
-       if(count<quiz.length-1 ){
 
-           setAtual(quiz[count+1].question)
-           setAtualOption(quiz[count+1].options)
-           setRes(quiz[count+1].correctAnswer)
-           console.log(res)
-           setCount(count + 1);
-           setBoleano(null)
-           setSelectedOption(null);
-           setMsgErrou("")
-           setMsgAcertou("")
-       }else{
-        alert("quiz finalizado")
-        window.location.reload()
-        
-       }
+    const {acertos,msgAcertou, msgErrou, res,selectedOption, quiz, boleano, atual,atualOption,count, option} = useContext(OptionContext)
 
+    function click(){
+        handleProxima()
     }
-    function handleOption(value) {
-       
-        console.log(value)
-        setRes(quiz[count].correctAnswer)
-        if (value === res) {
-           
-            setBoleano(true)
-            setAcertos(acertos+1)
-            setSelectedOption(true);
-            setMsgAcertou("Correto")
-            
-        } else {
-            setBoleano(false)
-            setMsgErrou("Você Errou!!!")
-          
-        }
-    }
+
     return (
         <div className="flex flex-col gap-2 h-full items-center px-4 relative">
              <h1 className="text-xl font-extrabold">Quiz</h1>
-            {/* {quiz.map((item,i)=>(
-               <div key={i} >
-                 <p>{item.question}</p>
-                 <Opcoes options={item.options} correta={item.correctAnswer} />
-               </div>
-            ))} */}
+          
             {/* <div>{acertos}</div> */}
             <Acertos acertos={acertos}/>
             <div className="flex max-w-[250px] absolute top-16 right-38 ">
@@ -68,24 +30,20 @@ export default function Perguntas() {
             <span className="text-green-400">{msgAcertou}</span>
             </div>
             <div className="flex w-90 h-20 justify-center min-w-[200px] max-w-[250px] mt-8"><div className=" w-25 h-40 flex text-xl sm:text-base md:text-lg lg:text-xl xl:text-2xl break-words ">{atual}</div></div>
-            {/* <div className="flex gap-10 "><button onClick={()=>handleOption(atualOption.shift())} value={atualOption} className={`${boleano? 'bg-green-600' : 'bg-red-500'} gap-10 `} ><div className="flex m-10">{atualOption}</div></button></div>
-            <div></div>
-            <div></div>
-            <div></div> */}
+          
             <div className="flex flex-col gap-2 justify-center  md:w-[700] mx-auto h-[300px] relative">
                 {quiz[count].options.map((option,i) => (
                     <div className="flex  text-sm min-w-[300px] " key={i}>
                 
                         <button  onClick={() => handleOption(option)} value={option} className={`${ option === res && selectedOption== true? 'bg-green-600' : 'bg-[#a6aec1]'} ${option !== res ? 'bg-[#a6aec1]' : ''} p-4 rounded text-black  min-w-[300px] max-w-[300px] hover:bg-[#6c788e]`} >{
                          option }
-                        {/* <button onClick={() => handleOption(option)} value={option} className={` gap-10 `} >{
-                         option} */}
+                        
                     </button>
                     </div>
                 ))}
             </div>
             <div className=" absolute flex items-end h-90 w-60 top-[500px] justify-center text-gray-400 font-bold hover:text-slate-800">
-                <button onClick={handleProxima}>proxima </button>
+                <button onClick={click}>proxima </button>
             </div>
         </div>
     )
