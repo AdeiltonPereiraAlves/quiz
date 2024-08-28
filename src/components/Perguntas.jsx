@@ -8,9 +8,9 @@ import { OptionContext } from "../context/OptionContext"
 
 export default function Perguntas() {
     const { handleOption, handleProxima } = useOpcoes()
-    const { acertos, msgAcertou, msgErrou, res,
+    const { acertos, msgAcertou, msgErrou, res,setRes,
         selectedOption, quiz, boleano, atual,
-        atualOption, count, option
+        atualOption, count, option, atualQuestion, setAtualQuestion
     } = useContext(OptionContext)
 
     return (
@@ -25,16 +25,22 @@ export default function Perguntas() {
             </div>
             {/* <div className="flex w-90 h-20 justify-center min-w-[200px] max-w-[250px] mt-8"><div className=" w-25 h-40 flex text-xl sm:text-base md:text-lg lg:text-xl xl:text-2xl break-words ">{atual}</div></div> */}
 
-            <div className="flex flex-col gap-2 justify-center  md:w-[700] mx-auto h-[300px] relative">
+            <div className="flex flex-col gap-2 justify-center px-10 md:w-[700] mx-auto h-[300px] relative">
+                {setAtualQuestion(quiz[count].question)}
+                {setRes(quiz[count].correctAnswer)}
+                <div className="p-10 mt-10">
+                    {atualQuestion}
+                </div>
                 {quiz[count].options.map((option, i) => (
                     
-                    <div className="flex  text-sm min-w-[300px] " key={i}>
-                       {quiz[count].question}
-                        <button onClick={() => handleOption(option)} value={option} className={`${option === res && selectedOption == true ? 'bg-green-600' : 'bg-[#a6aec1]'} ${option !== res ? 'bg-[#a6aec1]' : ''} p-4 rounded text-black  min-w-[300px] max-w-[300px] hover:bg-[#6c788e]`} >{
-                            option}
+                        <div className="flex justify-center text-sm min-w-[300px] " key={i}>
+                             
+                            <button onClick={() => handleOption(option)} value={option} className={`${option === res && selectedOption == true ? 'bg-green-600' : 'bg-[#a6aec1]'} ${option !== res ? 'bg-[#a6aec1]' : ''} p-4 rounded text-black  min-w-[300px] max-w-[300px] hover:bg-[#6c788e]`} >{
+                                option}
 
-                        </button>
-                    </div>
+                            </button>
+                        </div>
+                   
                 ))}
             </div>
             <div className=" absolute flex items-end h-90 w-60 top-[500px] justify-center text-gray-400 font-bold hover:text-slate-800">
