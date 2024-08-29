@@ -1,35 +1,42 @@
 const programmingQuizSeed = [
   {
+    id: 1,
     question: "Qual é o operador usado para comparação de igualdade estrita em JavaScript?",
     options: ["==", "!=", "===", "!=="],
     correctAnswer: "==="
   },
   {
+    id: 2,
     question: "Qual comando é usado para listar os arquivos em um diretório no Linux?",
     options: ["list", "dir", "ls", "show"],
     correctAnswer: "ls"
   },
   {
+    id: 3,
     question: "Qual é o método utilizado para converter uma string em um número inteiro em JavaScript?",
     options: ["parseInt()", "parseFloat()", "Number()", "toString()"],
     correctAnswer: "parseInt()"
   },
   {
+    id: 4,
     question: "Qual é o comando para criar um novo repositório Git?",
     options: ["git start", "git create", "git init", "git new"],
     correctAnswer: "git init"
   },
   {
+    id: 5,
     question: "Qual linguagem é conhecida por ser fortemente tipada?",
     options: ["JavaScript", "Python", "TypeScript", "HTML"],
     correctAnswer: "TypeScript"
   },
   {
+    id: 6,
     question: "Qual é a extensão de arquivo padrão para arquivos Python?",
     options: [".java", ".js", ".py", ".html"],
     correctAnswer: ".py"
   },
   {
+    id:7,
     question: "Qual é o propósito da função `Array.prototype.map()` em JavaScript?",
     options: [
       "Adicionar elementos a um array",
@@ -40,16 +47,19 @@ const programmingQuizSeed = [
     correctAnswer: "Transformar cada elemento de um array"
   },
   {
+    id:8,
     question: "Qual é o resultado de `10 % 3` em JavaScript?",
     options: ["0", "1", "2", "3"],
     correctAnswer: "1"
   },
   {
+    id:9,
     question: "Qual é o comando para verificar o status das alterações no Git?",
     options: ["git check", "git status", "git log", "git diff"],
     correctAnswer: "git status"
   },
   {
+    id:10,
     question: "Qual é a função principal do Node.js?",
     options: [
       "Renderizar páginas web",
@@ -60,6 +70,7 @@ const programmingQuizSeed = [
     correctAnswer: "Executar código JavaScript no servidor"
   },
   {
+    id: 11,
     question: "Qual é a função de um ORM (Object-Relational Mapping)?",
     options: [
       "Gerenciar dependências de um projeto",
@@ -70,46 +81,54 @@ const programmingQuizSeed = [
     correctAnswer: "Mapear dados de um banco de dados para objetos em código"
   },
   {
+    id: 12,
     question: "Qual é o resultado de `typeof null` em JavaScript?",
     options: ["'null'", "'undefined'", "'object'", "'number'"],
     correctAnswer: "'object'"
   },
   {
+    id:13,
     question: "Qual linguagem de programação é tipicamente associada ao desenvolvimento de aplicativos para iOS?",
     options: ["Kotlin", "Swift", "Java", "Ruby"],
     correctAnswer: "Swift"
   },
-  {
+  {id: 14,
     question: "Qual é o nome do arquivo de configuração padrão para um projeto Node.js?",
     options: ["config.js", "package.json", "index.js", "app.js"],
     correctAnswer: "package.json"
   },
   {
+    id: 15,
     question: "Qual dos seguintes é um padrão de design para controle de fluxo assíncrono em JavaScript?",
     options: ["Callbacks", "Promises", "Both", "None"],
     correctAnswer: "Both"
   },
   {
+    id:16,
     question: "Qual é o banco de dados mais utilizado em projetos que utilizam o Prisma?",
     options: ["PostgreSQL", "Oracle", "MySQL", "MongoDB"],
     correctAnswer: "PostgreSQL"
   },
   {
+    id:17,
     question: "Qual é o comando para iniciar um novo projeto React?",
     options: ["npx create-react-app my-app", "npm init react-app my-app", "npx react-create-app my-app", "npm create-react-app my-app"],
     correctAnswer: "npx create-react-app my-app"
   },
   {
+    id:18,
     question: "Qual é o comando para instalar dependências de um projeto Node.js?",
     options: ["npm install", "npm start", "npm run", "npm update"],
     correctAnswer: "npm install"
   },
   {
+    id:19,
     question: "Qual a função do comando `chmod` no Linux?",
     options: ["Mudar as permissões de um arquivo", "Listar os arquivos em um diretório", "Copiar um arquivo", "Mover um arquivo"],
     correctAnswer: "Mudar as permissões de um arquivo"
   },
   {
+    id: 20,
     question: "Qual das opções a seguir é um serviço de cloud computing?",
     options: ["Docker", "AWS", "GitHub", "Webpack"],
     correctAnswer: "AWS"

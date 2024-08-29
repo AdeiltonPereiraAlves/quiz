@@ -10,7 +10,7 @@ export default function Perguntas() {
     const { handleOption, handleProxima } = useOpcoes()
     const { acertos, msgAcertou, msgErrou, res,setRes,
         selectedOption, quiz, boleano, atual,
-        atualOption, count, option, atualQuestion, setAtualQuestion
+        atualOption, count, option, atualQuestion, setAtualQuestion,arrayRepetidas, setArrayRepetidas,
     } = useContext(OptionContext)
 
     return (
@@ -27,7 +27,11 @@ export default function Perguntas() {
 
             <div className="flex flex-col gap-2 justify-center px-10 md:w-[700] mx-auto h-[300px] relative">
                 {setAtualQuestion(quiz[count].question)}
+                {
+                  setArrayRepetidas(quiz[count].id)
+                }
                 {setRes(quiz[count].correctAnswer)}
+                {quiz[count].id}
                 <div className="p-10 mt-10">
                     {atualQuestion}
                 </div>

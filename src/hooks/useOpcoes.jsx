@@ -24,9 +24,12 @@ export default function useOption(){
         }
         
     }
+    function filtrarRepetidas(array,id){
+        return array.filter((e) => e.id != id)
+    }
     function handleProxima() {
      
-        if(count<quiz.length-1){
+        if(count<20){
             setUmClick(0)
             setAtual(quiz[count].question)
             setAtualOption(quiz[count].options)

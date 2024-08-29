@@ -23,21 +23,26 @@ export default function OptionProvider({ children }) {
   const [numAleatorio, setNumeroAleatorio] = useState();
 
   const [acertos, setAcertos] = useState(0)
+  const[arrayRepetidas, setArrayRepetidas] = useState([]);
 
   //  useEffect(()=>{
   //     aleatorizarArray();
 
   //  },[])
 
+  function filtrarRepetidas(array,id){
+    return array.filter((e) => e.id != id)
+  }
   function aleatorizarArray() {
-    let n = Math.floor(Math.random() * 20)
-    console.log(n)
+    let n = Math.floor(Math.random() * 21)
+    
     setCount(n)
 
     setAtual(quiz[count].question)
   }
 
   const stateDados = {
+    arrayRepetidas, setArrayRepetidas,
     boleano, setBoleano,
     acertos, setAcertos,
     selectedOption, setSelectedOption,
